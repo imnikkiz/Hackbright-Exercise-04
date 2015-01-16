@@ -173,6 +173,7 @@ def custom_append(input_list, value):
     end = input_list[-1]
     input_list[-1:] = [end, value]
 
+
 def custom_extend(input_list, second_list):
     """
         like input_list.extend(second_list), should append every item in the second 
@@ -181,8 +182,6 @@ def custom_extend(input_list, second_list):
     for i in second_list:
         end = input_list[-1]
         input_list[-1:] = [end, i] 
-
-
 
 
 def custom_insert(input_list, index, value):
@@ -201,26 +200,40 @@ def custom_insert(input_list, index, value):
         next = input_list[index]
         input_list[index:index+1] = [value, next]
 
+
 def custom_remove(input_list, value):
     """
         like input_list.remove(value), should remove the first item of the 
         value specified and return nothing
     """
-    pass
+    count = 0
+    for i in input_list:
+        if i == value:
+            rest_of_list = input_list[count+1:]
+            break
+        count += 1
+    input_list[count:] = rest_of_list 
+
 
 def custom_pop(input_list):
     """
         like input_list.pop(), should remove the last item in the list and 
         return it
     """
-    pass
+    last = input_list[-1]
+    input_list[-1:] = []
+    return last
 
 def custom_index(input_list, value):
     """
         like input_list.index(value), should return the index of the first item 
         which matches the specified value
     """
-    pass
+    count = 0
+    for i in input_list:
+        if i == value:
+            return count
+        count += 1 
 
 def custom_count(input_list, value):
     """
