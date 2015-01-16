@@ -240,28 +240,64 @@ def custom_count(input_list, value):
         like input_list.count(value), should return the number of times the specified
         value appears in the list.
     """
-    pass
+    count = 0
+    for i in input_list:
+        if i == value:
+            count += 1
+    return count
 
 def custom_reverse(input_list):
     """
         like input_list.reverse(), should reverse the elements of the original list
         and return nothing (we call this reversing "in place")
     """
-    pass
+
+    count = 0
+    for i in input_list:
+        count += 1
+    for i in range(count/2):
+        store = input_list[i]
+        input_list[i] = input_list[-1-i]
+        input_list[-1-i] = store
+
 
 def custom_contains(input_list, value):
     """
         like (value in input_list), should return True if the list contains the
         specified value and False if it does not 
     """
-    pass
+    contains = False
+    for i in input_list:
+        if i == value:
+            contains = True
+    return contains 
+
 
 def custom_equality(some_list, another_list):
     """
         like (some_list == another_list), should return True if both lists contain
         the same values in the same indexes
     """
-    pass
+    some_list_count = 0
+    for i in some_list:
+        some_list_count += 1
+    
+    another_list_count = 0
+    for i in another_list:
+        another_list_count += 1
+    
+    if some_list_count != another_list_count:
+        return False
+
+    same = True 
+    count = 0
+    for i in some_list:
+        if i != another_list[count]:
+            same = False
+            break
+        count += 1
+    return same
+
 
 """
 Part 2 is finished! Required: Ask for a code review. Optional: High-Five
