@@ -121,6 +121,9 @@ def delete_third_and_seventh(input_list):
         Remove the third and seventh elements of the input list.
         [ A, B, C, D, E, F, G, H ] --> [ A, B, D, E, F, H ]
     """
+
+    # DONT USE  DEL
+
     del input_list[6]
     del input_list[2]
     return input_list
@@ -131,6 +134,9 @@ def delete_middle(input_list):
         last two.
          [ A, B, C, D, E, F, G, H ] --> [ A, B, G, H ]
     """
+    
+    # dont USE DEL
+
     del input_list[2:-2]
     return input_list
 
@@ -270,7 +276,14 @@ def custom_contains(input_list, value):
     for i in input_list:
         if i == value:
             contains = True
+            break
     return contains 
+
+    # alt by joel
+    # for i in input_list:
+    #     if i == value:
+    #         return True
+    # return False
 
 
 def custom_equality(some_list, another_list):
